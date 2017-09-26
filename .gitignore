@@ -1,12 +1,7 @@
-target/
-pom.xml.tag
-pom.xml.releaseBackup
-pom.xml.versionsBackup
-pom.xml.next
-release.properties
-dependency-reduced-pom.xml
-buildNumber.properties
-.mvn/timing.properties
 
-# Avoid ignoring Maven wrapper jar file (.jar files are usually ignored)
-!/.mvn/wrapper/maven-wrapper.jar
+/.idea/
+/junit4and5/target/
+/junit4and5/junit5-sandpit-junit4-and-5.iml
+/junit5only/target/
+/junit5only/junit5-sandpit-junit5-only.iml
+/junit5-sandpit.iml
