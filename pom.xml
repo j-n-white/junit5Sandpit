@@ -9,8 +9,8 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>junit5only</module>
         <module>junit4and5</module>
+        <module>junit5only</module>
     </modules>
     
     <properties>
