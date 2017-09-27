@@ -6,6 +6,9 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
+/**
+ * This is an unaltered junit 4 test class
+ */
 public class RomanNumeralConverterJunit4Test {
 
     private RomanNumeralConverter testee;

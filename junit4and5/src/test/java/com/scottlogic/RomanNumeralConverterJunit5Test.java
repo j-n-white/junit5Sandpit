@@ -8,6 +8,9 @@ import org.junit.jupiter.api.TestInstance;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+/**
+ * This test class shows the simplest conversion from a junit 4 test to a junit 5 test
+ */
 class RomanNumeralConverterJunit5Test {
 
     private static RomanNumeralConverter testee;
