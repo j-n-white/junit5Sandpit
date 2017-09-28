@@ -1,9 +1,8 @@
 package com.scottlogic;
 
 
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInstance;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -13,10 +12,10 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
  */
 class RomanNumeralConverterJunit5Test {
 
-    private static RomanNumeralConverter testee;
+    private RomanNumeralConverter testee;
 
-    @BeforeAll
-    static void setUp() {
+    @BeforeEach
+    void setUp() {
         testee = new RomanNumeralConverter();
     }
 
@@ -117,7 +116,7 @@ class RomanNumeralConverterJunit5Test {
 
     @Test
     void zeroReturnsNulla() {
-        assertEquals("nulla", testee.convertToRomanNumerals(0));
+        assertEquals("nulla", testee.convertToRomanNumerals(0), "There is no roman numeral for 0 so \"nulla\" should be used instead");
     }
 
     @Test

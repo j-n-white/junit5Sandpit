@@ -116,7 +116,7 @@ class RomanNumeralConverterJunit5Test {
 
     @Test
     void zeroReturnsNulla() {
-        assertEquals("nulla", testee.convertToRomanNumerals(0));
+        assertEquals("nulla", testee.convertToRomanNumerals(0), "There is no roman numeral for 0 so \"nulla\" should be used instead");
     }
 
     @Test

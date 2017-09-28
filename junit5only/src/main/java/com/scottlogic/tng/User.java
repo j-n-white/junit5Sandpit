@@ -1,16 +1,25 @@
 package com.scottlogic.tng;
 
-public class User {
+class User {
     private final String name;
     private final UserType userType;
+    private Quarters quarters;
 
     User(String name, UserType userType) {
         this.name = name;
         this.userType = userType;
     }
 
-    public String getName() {
+    String getName() {
         return name;
+    }
+
+    void setQuarters(Quarters quarters) {
+        this.quarters = quarters;
+    }
+
+    Quarters getQuarters() {
+        return quarters;
     }
 
     boolean isCrew() {

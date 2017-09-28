@@ -115,7 +115,7 @@ public class RomanNumeralConverterJunit4Test {
 
     @Test
     public void zeroReturnsNulla() {
-        assertEquals("nulla", testee.convertToRomanNumerals(0));
+        assertEquals("There is no roman numeral for 0 so \"nulla\" should be used instead","nulla", testee.convertToRomanNumerals(0));
     }
 
     @Test (expected = IllegalArgumentException.class)
