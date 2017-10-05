@@ -11,16 +11,16 @@ import static org.junit.jupiter.api.Assertions.*;
  * Example class to show how nesting and display names can be used to logically group and label tests
  */
 @DisplayName("The USS Enterprise access control")
-class EnterpriseAccessControlNestedTest {
+class AccessControlNestedTest {
 
-    private EnterpriseAccessControl testee;
+    private AccessControl testee;
     private User picard = new User("Jean-luc Picard", UserType.BRIDGE_CREW);
     private User barclay = new User("Reg Barclay", UserType.CREW);
     private User lwaxana = new User("Lwaxana Troi", UserType.NON_CREW);
 
     @BeforeEach
     void setUp() {
-        testee = new EnterpriseAccessControl();
+        testee = new AccessControl();
     }
 
     @Test

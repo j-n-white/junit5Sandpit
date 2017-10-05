@@ -8,25 +8,40 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * A refactored version of {@link EnterpriseAccessControlNestedTest} to use grouped assertions where appropriate.
+ * A refactored version of {@link AccessControlGroupedAssertionTest} to implement an interface with additional tests.
  */
 @DisplayName("The USS Enterprise access control")
-class EnterpriseAccessControlGroupedAssertionTest {
+class AccessControlInterfaceTestTest implements DiagnosticInfoTest<AccessControl> {
 
-    private EnterpriseAccessControl testee;
+    private AccessControl testee;
     private User picard = new User("Jean-luc Picard", UserType.BRIDGE_CREW);
     private User barclay = new User("Reg Barclay", UserType.CREW);
     private User lwaxana = new User("Lwaxana Troi", UserType.NON_CREW);
 
     @BeforeEach
     void setUp() {
-        testee = new EnterpriseAccessControl();
+        testee = new AccessControl();
     }
 
     @Test
     @DisplayName("starts with no alert status")
     void startsWithNoAlert() {
         assertEquals(Alert.NONE, testee.getAlertStatus());
+    }
+
+    @Override
+    public AccessControl getInstance() {
+        return testee;
+    }
+
+    @Override
+    public String getExpectedSystemName() {
+        return "Access Control";
+    }
+
+    @Override
+    public void accessWithUser(User user) {
+        testee.canAccessPhasers(user);
     }
 
     @Nested

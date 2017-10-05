@@ -1,10 +1,12 @@
 package com.scottlogic.tng;
 
-class EnterpriseAccessControl {
+class AccessControl implements DiagnosticInfo {
 
     private Alert alertStatus = Alert.NONE;
+    private User lastUserToAccessSystem;
 
     boolean canAccessReplicator(User user) {
+        lastUserToAccessSystem = user;
         if (Alert.NONE.equals(alertStatus)) {
             return true;
         } else if (Alert.YELLOW.equals(alertStatus)) {
@@ -15,6 +17,7 @@ class EnterpriseAccessControl {
     }
 
     boolean canAccessTransporter(User user) {
+        lastUserToAccessSystem = user;
         if (Alert.RED.equals(alertStatus)) {
             return user.isBridgeCrew();
         } else {
@@ -23,6 +26,7 @@ class EnterpriseAccessControl {
     }
 
     boolean canAccessPhasers(User user) {
+        lastUserToAccessSystem = user;
         return user.isBridgeCrew();
     }
 
@@ -32,5 +36,15 @@ class EnterpriseAccessControl {
 
     Alert getAlertStatus() {
         return alertStatus;
+    }
+
+    @Override
+    public String getSystemName() {
+        return "Access Control";
+    }
+
+    @Override
+    public User getLastUserToAccessSystem() {
+        return lastUserToAccessSystem;
     }
 }
