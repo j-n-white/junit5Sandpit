@@ -1,5 +1,7 @@
 package com.scottlogic.tng;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 class User {
     private final String name;
     private final UserType userType;
@@ -28,5 +30,13 @@ class User {
 
     boolean isBridgeCrew() {
         return UserType.BRIDGE_CREW.equals(userType);
+    }
+
+    @Override
+    public String toString() {
+        return new ToStringBuilder(this)
+                .append("name", name)
+                .append("userType", userType)
+                .build();
     }
 }
