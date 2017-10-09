@@ -11,22 +11,17 @@ import static org.junit.jupiter.api.Assertions.*;
  * A refactored version of {@link AccessControlGroupedAssertionTest} to implement an interface with additional tests.
  */
 @DisplayName("The USS Enterprise access control")
-class AccessControlInterfaceTestTest implements DiagnosticInfoTest<AccessControl> {
+class AccessControlInterfaceTest implements DiagnosticInfoTest<AccessControl> {
 
     private AccessControl testee;
     private User picard = new User("Jean-luc Picard", UserType.BRIDGE_CREW);
     private User barclay = new User("Reg Barclay", UserType.CREW);
     private User lwaxana = new User("Lwaxana Troi", UserType.NON_CREW);
+    private User q = new User("Q", null);
 
     @BeforeEach
     void setUp() {
         testee = new AccessControl();
-    }
-
-    @Test
-    @DisplayName("starts with no alert status")
-    void startsWithNoAlert() {
-        assertEquals(Alert.NONE, testee.getAlertStatus());
     }
 
     @Override
@@ -44,6 +39,20 @@ class AccessControlInterfaceTestTest implements DiagnosticInfoTest<AccessControl
         testee.canAccessPhasers(user);
     }
 
+    @Test
+    @DisplayName("starts with no alert status")
+    void startsWithNoAlert() {
+        assertEquals(Alert.NONE, testee.getAlertStatus());
+    }
+
+    @Test
+    @DisplayName("throws an exception when attempt is made to set alert status to null")
+    void exceptionThrownIfTryToSetAlertStatusToNull() {
+        IllegalArgumentException actual = assertThrows(IllegalArgumentException.class,
+                () -> testee.setAlertStatus(null));
+        assertEquals("Alert status cannot be set to null.", actual.getMessage());
+    }
+
     @Nested
     @DisplayName("when set to no alert status")
     class whenNoAlert {
@@ -54,7 +63,8 @@ class AccessControlInterfaceTestTest implements DiagnosticInfoTest<AccessControl
             assertAll(
                     () -> assertTrue(testee.canAccessReplicator(picard), "Bridge crew should be able to access replicators"),
                     () -> assertTrue(testee.canAccessReplicator(barclay), "Crew should be able to access replicators"),
-                    () -> assertTrue(testee.canAccessReplicator(lwaxana), "Non-crew should be able to access replicators")
+                    () -> assertTrue(testee.canAccessReplicator(lwaxana), "Non-crew should be able to access replicators"),
+                    () -> assertTrue(testee.canAccessReplicator(q), "User with null type should be able to access replicators")
             );
         }
 
@@ -64,7 +74,8 @@ class AccessControlInterfaceTestTest implements DiagnosticInfoTest<AccessControl
             assertAll(
                     () -> assertTrue(testee.canAccessTransporter(picard), "Bridge crew should be able to access transporters"),
                     () -> assertTrue(testee.canAccessTransporter(barclay), "Crew should be able to access transporters"),
-                    () -> assertFalse(testee.canAccessTransporter(lwaxana), "Non-crew should not be able to access transporters")
+                    () -> assertFalse(testee.canAccessTransporter(lwaxana), "Non-crew should not be able to access transporters"),
+                    () -> assertFalse(testee.canAccessTransporter(q), "User with null type should not be able to access transporters")
             );
         }
 
@@ -74,7 +85,8 @@ class AccessControlInterfaceTestTest implements DiagnosticInfoTest<AccessControl
             assertAll(
                     () -> assertTrue(testee.canAccessPhasers(picard), "Bridge crew should be able to access phasers"),
                     () -> assertFalse(testee.canAccessPhasers(barclay), "Crew should not be able to access phasers"),
-                    () -> assertFalse(testee.canAccessPhasers(lwaxana), "Non-crew should not be able to access phasers")
+                    () -> assertFalse(testee.canAccessPhasers(lwaxana), "Non-crew should not be able to access phasers"),
+                    () -> assertFalse(testee.canAccessPhasers(q), "User with null type should not be able to access phasers")
             );
         }
     }
@@ -94,7 +106,8 @@ class AccessControlInterfaceTestTest implements DiagnosticInfoTest<AccessControl
             assertAll(
                     () -> assertTrue(testee.canAccessReplicator(picard), "Bridge crew should be able to access replicators"),
                     () -> assertTrue(testee.canAccessReplicator(barclay), "Crew should be able to access replicators"),
-                    () -> assertFalse(testee.canAccessReplicator(lwaxana), "Non-crew should not be able to access replicators")
+                    () -> assertFalse(testee.canAccessReplicator(lwaxana), "Non-crew should not be able to access replicators"),
+                    () -> assertFalse(testee.canAccessReplicator(q), "User with null type should not be able to access replicators")
             );
         }
 
@@ -104,7 +117,8 @@ class AccessControlInterfaceTestTest implements DiagnosticInfoTest<AccessControl
             assertAll(
                     () -> assertTrue(testee.canAccessTransporter(picard), "Bridge crew should be able to access transporters"),
                     () -> assertTrue(testee.canAccessTransporter(barclay), "Crew should be able to access transporters"),
-                    () -> assertFalse(testee.canAccessTransporter(lwaxana), "Non-crew should not be able to access transporters")
+                    () -> assertFalse(testee.canAccessTransporter(lwaxana), "Non-crew should not be able to access transporters"),
+                    () -> assertFalse(testee.canAccessTransporter(q), "User with null type should not be able to access transporters")
             );
         }
 
@@ -114,7 +128,8 @@ class AccessControlInterfaceTestTest implements DiagnosticInfoTest<AccessControl
             assertAll(
                     () -> assertTrue(testee.canAccessPhasers(picard), "Bridge crew should be able to access phasers"),
                     () -> assertFalse(testee.canAccessPhasers(barclay), "Crew should not be able to access phasers"),
-                    () -> assertFalse(testee.canAccessPhasers(lwaxana), "Non-crew should not be able to access phasers")
+                    () -> assertFalse(testee.canAccessPhasers(lwaxana), "Non-crew should not be able to access phasers"),
+                    () -> assertFalse(testee.canAccessPhasers(q), "User with null type should not be able to access phasers")
             );
         }
     }
@@ -134,7 +149,8 @@ class AccessControlInterfaceTestTest implements DiagnosticInfoTest<AccessControl
             assertAll(
                     () -> assertTrue(testee.canAccessReplicator(picard), "Bridge crew should be able to access replicators"),
                     () -> assertFalse(testee.canAccessReplicator(barclay), "Crew should be able to access replicators"),
-                    () -> assertFalse(testee.canAccessReplicator(lwaxana), "Non-crew should not be able to access replicators")
+                    () -> assertFalse(testee.canAccessReplicator(lwaxana), "Non-crew should not be able to access replicators"),
+                    () -> assertFalse(testee.canAccessReplicator(q), "User with null type should not be able to access replicators")
             );
         }
 
@@ -144,7 +160,8 @@ class AccessControlInterfaceTestTest implements DiagnosticInfoTest<AccessControl
             assertAll(
                     () -> assertTrue(testee.canAccessTransporter(picard), "Bridge crew should be able to access transporters"),
                     () -> assertFalse(testee.canAccessTransporter(barclay), "Crew should not be able to access transporters"),
-                    () -> assertFalse(testee.canAccessTransporter(lwaxana), "Non-crew should not be able to access transporters")
+                    () -> assertFalse(testee.canAccessTransporter(lwaxana), "Non-crew should not be able to access transporters"),
+                    () -> assertFalse(testee.canAccessTransporter(q), "User with null type should not be able to access transporters")
             );
         }
 
@@ -154,7 +171,8 @@ class AccessControlInterfaceTestTest implements DiagnosticInfoTest<AccessControl
             assertAll(
                     () -> assertTrue(testee.canAccessPhasers(picard), "Bridge crew should be able to access phasers"),
                     () -> assertFalse(testee.canAccessPhasers(barclay), "Crew should not be able to access phasers"),
-                    () -> assertFalse(testee.canAccessPhasers(lwaxana), "Non-crew should not be able to access phasers")
+                    () -> assertFalse(testee.canAccessPhasers(lwaxana), "Non-crew should not be able to access phasers"),
+                    () -> assertFalse(testee.canAccessPhasers(q), "User with null type should not be able to access phasers")
             );
         }
     }
