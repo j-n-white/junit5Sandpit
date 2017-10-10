@@ -54,13 +54,13 @@ public class AccessControlJUnit4Test {
     }
 
     @Test
-    public void nonCrewCanNotAccessReplicatorsWhenYellowAlert() {
+    public void nonCrewCannotAccessReplicatorsWhenYellowAlert() {
         testee.setAlertStatus(Alert.YELLOW);
         assertFalse(testee.canAccessReplicator(lwaxana));
     }
 
     @Test
-    public void userWithNullUserTypeCanNotAccessReplicatorsWhenYellowAlert() {
+    public void userWithNullUserTypeCannotAccessReplicatorsWhenYellowAlert() {
         testee.setAlertStatus(Alert.YELLOW);
         assertFalse("User with null user type treated as non crew", testee.canAccessReplicator(q));
     }
@@ -72,19 +72,19 @@ public class AccessControlJUnit4Test {
     }
 
     @Test
-    public void crewCanNotAccessReplicatorsWhenRedAlert() {
+    public void crewCannotAccessReplicatorsWhenRedAlert() {
         testee.setAlertStatus(Alert.RED);
         assertFalse(testee.canAccessReplicator(barclay));
     }
 
     @Test
-    public void nonCrewCanNotAccessReplicatorsWhenRedAlert() {
+    public void nonCrewCannotAccessReplicatorsWhenRedAlert() {
         testee.setAlertStatus(Alert.RED);
         assertFalse(testee.canAccessReplicator(lwaxana));
     }
 
     @Test
-    public void userWithNullUserTypeCanNotAccessReplicatorsWhenRedAlert() {
+    public void userWithNullUserTypeCannotAccessReplicatorsWhenRedAlert() {
         testee.setAlertStatus(Alert.RED);
         assertFalse("User with null user type treated as non crew", testee.canAccessReplicator(q));
     }
@@ -100,12 +100,12 @@ public class AccessControlJUnit4Test {
     }
 
     @Test
-    public void nonCrewCanNotAccessTransportersWhenNoAlertLevel() {
+    public void nonCrewCannotAccessTransportersWhenNoAlertLevel() {
         assertFalse(testee.canAccessTransporter(lwaxana));
     }
 
     @Test
-    public void userWithNullUserTypeCanNotAccessTransportersWhenNoAlertLevel() {
+    public void userWithNullUserTypeCannotAccessTransportersWhenNoAlertLevel() {
         assertFalse("User with null user type treated as non crew", testee.canAccessTransporter(q));
     }
 
@@ -122,13 +122,13 @@ public class AccessControlJUnit4Test {
     }
 
     @Test
-    public void nonCrewCanNotAccessTransportersWhenYellowAlert() {
+    public void nonCrewCannotAccessTransportersWhenYellowAlert() {
         testee.setAlertStatus(Alert.YELLOW);
         assertFalse(testee.canAccessTransporter(lwaxana));
     }
 
     @Test
-    public void userWithNullUserTypeCanNotAccessTransportersWhenYellowAlert() {
+    public void userWithNullUserTypeCannotAccessTransportersWhenYellowAlert() {
         testee.setAlertStatus(Alert.YELLOW);
         assertFalse("User with null user type treated as non crew", testee.canAccessTransporter(q));
     }
@@ -140,19 +140,19 @@ public class AccessControlJUnit4Test {
     }
 
     @Test
-    public void crewCanNotAccessTransportersWhenRedAlert() {
+    public void crewCannotAccessTransportersWhenRedAlert() {
         testee.setAlertStatus(Alert.RED);
         assertFalse(testee.canAccessTransporter(barclay));
     }
 
     @Test
-    public void nonCrewCanNotAccessTransportersWhenRedAlert() {
+    public void nonCrewCannotAccessTransportersWhenRedAlert() {
         testee.setAlertStatus(Alert.RED);
         assertFalse(testee.canAccessTransporter(lwaxana));
     }
 
     @Test
-    public void userWithNullUserTypeCanNotAccessTransportersWhenRedAlert() {
+    public void userWithNullUserTypeCannotAccessTransportersWhenRedAlert() {
         testee.setAlertStatus(Alert.RED);
         assertFalse("User with null user type treated as non crew", testee.canAccessTransporter(q));
     }
@@ -163,17 +163,17 @@ public class AccessControlJUnit4Test {
     }
 
     @Test
-    public void crewCanNotAccessPhasersWhenNoAlertLevel() {
+    public void crewCannotAccessPhasersWhenNoAlertLevel() {
         assertFalse(testee.canAccessPhasers(barclay));
     }
 
     @Test
-    public void nonCrewCanNotAccessPhasersWhenNoAlertLevel() {
+    public void nonCrewCannotAccessPhasersWhenNoAlertLevel() {
         assertFalse(testee.canAccessPhasers(lwaxana));
     }
 
     @Test
-    public void userWithNullUserTypeCanNotAccessPhasersWhenNoAlertLevel() {
+    public void userWithNullUserTypeCannotAccessPhasersWhenNoAlertLevel() {
         assertFalse("User with null user type treated as non crew", testee.canAccessPhasers(q));
     }
 
@@ -184,19 +184,19 @@ public class AccessControlJUnit4Test {
     }
 
     @Test
-    public void crewCanNotAccessPhasersWhenYellowAlert() {
+    public void crewCannotAccessPhasersWhenYellowAlert() {
         testee.setAlertStatus(Alert.YELLOW);
         assertFalse(testee.canAccessPhasers(barclay));
     }
 
     @Test
-    public void nonCrewCanNotAccessPhasersWhenYellowAlert() {
+    public void nonCrewCannotAccessPhasersWhenYellowAlert() {
         testee.setAlertStatus(Alert.YELLOW);
         assertFalse(testee.canAccessPhasers(lwaxana));
     }
 
     @Test
-    public void userWithNullUserTypeCanNotAccessPhasersWhenYellowAlert() {
+    public void userWithNullUserTypeCannotAccessPhasersWhenYellowAlert() {
         testee.setAlertStatus(Alert.YELLOW);
         assertFalse("User with null user type treated as non crew", testee.canAccessPhasers(q));
     }
@@ -208,19 +208,19 @@ public class AccessControlJUnit4Test {
     }
 
     @Test
-    public void crewCanNotAccessPhasersWhenRedAlert() {
+    public void crewCannotAccessPhasersWhenRedAlert() {
         testee.setAlertStatus(Alert.RED);
         assertFalse(testee.canAccessPhasers(barclay));
     }
 
     @Test
-    public void nonCrewCanNotAccessPhasersWhenRedAlert() {
+    public void nonCrewCannotAccessPhasersWhenRedAlert() {
         testee.setAlertStatus(Alert.RED);
         assertFalse(testee.canAccessPhasers(lwaxana));
     }
 
     @Test
-    public void userWithNullUserTypeCanNotAccessPhasersWhenRedAlert() {
+    public void userWithNullUserTypeCannotAccessPhasersWhenRedAlert() {
         testee.setAlertStatus(Alert.RED);
         assertFalse("User with null user type treated as non crew", testee.canAccessPhasers(q));
     }
@@ -229,7 +229,7 @@ public class AccessControlJUnit4Test {
     public void exceptionThrownIfTryToSetAlertStatusToNull() {
         try {
             testee.setAlertStatus(null);
-            fail("Exception shoudl have been thrown");
+            fail("Exception should have been thrown");
         } catch (IllegalArgumentException e) {
             assertEquals("Alert status cannot be set to null.", e.getMessage());
             throw e;

@@ -55,13 +55,13 @@ class AccessControlJUnit5Test {
     }
 
     @Test
-    void nonCrewCanNotAccessReplicatorsWhenYellowAlert() {
+    void nonCrewCannotAccessReplicatorsWhenYellowAlert() {
         testee.setAlertStatus(Alert.YELLOW);
         assertFalse(testee.canAccessReplicator(lwaxana));
     }
 
     @Test
-    void userWithNullUserTypeCanNotAccessReplicatorsWhenYellowAlert() {
+    void userWithNullUserTypeCannotAccessReplicatorsWhenYellowAlert() {
         testee.setAlertStatus(Alert.YELLOW);
         assertFalse(testee.canAccessReplicator(q),
                 "User with null user type treated as non crew");
@@ -74,19 +74,19 @@ class AccessControlJUnit5Test {
     }
 
     @Test
-    void crewCanNotAccessReplicatorsWhenRedAlert() {
+    void crewCannotAccessReplicatorsWhenRedAlert() {
         testee.setAlertStatus(Alert.RED);
         assertFalse(testee.canAccessReplicator(barclay));
     }
 
     @Test
-    void nonCrewCanNotAccessReplicatorsWhenRedAlert() {
+    void nonCrewCannotAccessReplicatorsWhenRedAlert() {
         testee.setAlertStatus(Alert.RED);
         assertFalse(testee.canAccessReplicator(lwaxana));
     }
 
     @Test
-    void userWithNullUserTypeCanNotAccessReplicatorsWhenRedAlert() {
+    void userWithNullUserTypeCannotAccessReplicatorsWhenRedAlert() {
         testee.setAlertStatus(Alert.RED);
         assertFalse(testee.canAccessReplicator(q),
                 "User with null user type treated as non crew");
@@ -103,12 +103,12 @@ class AccessControlJUnit5Test {
     }
 
     @Test
-    void nonCrewCanNotAccessTransportersWhenNoAlertLevel() {
+    void nonCrewCannotAccessTransportersWhenNoAlertLevel() {
         assertFalse(testee.canAccessTransporter(lwaxana));
     }
 
     @Test
-    void userWithNullUserTypeCanNotAccessTransportersWhenNoAlertLevel() {
+    void userWithNullUserTypeCannotAccessTransportersWhenNoAlertLevel() {
         assertFalse(testee.canAccessTransporter(q),
                 "User with null user type treated as non crew");
     }
@@ -126,13 +126,13 @@ class AccessControlJUnit5Test {
     }
 
     @Test
-    void nonCrewCanNotAccessTransportersWhenYellowAlert() {
+    void nonCrewCannotAccessTransportersWhenYellowAlert() {
         testee.setAlertStatus(Alert.YELLOW);
         assertFalse(testee.canAccessTransporter(lwaxana));
     }
 
     @Test
-    void userWithNullUserTypeCanNotAccessTransportersWhenYellowAlert() {
+    void userWithNullUserTypeCannotAccessTransportersWhenYellowAlert() {
         testee.setAlertStatus(Alert.YELLOW);
         assertFalse(testee.canAccessTransporter(q),
                 "User with null user type treated as non crew");
@@ -145,19 +145,19 @@ class AccessControlJUnit5Test {
     }
 
     @Test
-    void crewCanNotAccessTransportersWhenRedAlert() {
+    void crewCannotAccessTransportersWhenRedAlert() {
         testee.setAlertStatus(Alert.RED);
         assertFalse(testee.canAccessTransporter(barclay));
     }
 
     @Test
-    void nonCrewCanNotAccessTransportersWhenRedAlert() {
+    void nonCrewCannotAccessTransportersWhenRedAlert() {
         testee.setAlertStatus(Alert.RED);
         assertFalse(testee.canAccessTransporter(lwaxana));
     }
 
     @Test
-    void userWithNullUserTypeCanNotAccessTransportersWhenRedAlert() {
+    void userWithNullUserTypeCannotAccessTransportersWhenRedAlert() {
         testee.setAlertStatus(Alert.RED);
         assertFalse(testee.canAccessTransporter(q),
                 "User with null user type treated as non crew");
@@ -169,17 +169,17 @@ class AccessControlJUnit5Test {
     }
 
     @Test
-    void crewCanNotAccessPhasersWhenNoAlertLevel() {
+    void crewCannotAccessPhasersWhenNoAlertLevel() {
         assertFalse(testee.canAccessPhasers(barclay));
     }
 
     @Test
-    void nonCrewCanNotAccessPhasersWhenNoAlertLevel() {
+    void nonCrewCannotAccessPhasersWhenNoAlertLevel() {
         assertFalse(testee.canAccessPhasers(lwaxana));
     }
 
     @Test
-    void userWithNullUserTypeCanNotAccessPhasersWhenNoAlertLevel() {
+    void userWithNullUserTypeCannotAccessPhasersWhenNoAlertLevel() {
         assertFalse(testee.canAccessPhasers(q),
                 "User with null user type treated as non crew");
     }
@@ -191,19 +191,19 @@ class AccessControlJUnit5Test {
     }
 
     @Test
-    void crewCanNotAccessPhasersWhenYellowAlert() {
+    void crewCannotAccessPhasersWhenYellowAlert() {
         testee.setAlertStatus(Alert.YELLOW);
         assertFalse(testee.canAccessPhasers(barclay));
     }
 
     @Test
-    void nonCrewCanNotAccessPhasersWhenYellowAlert() {
+    void nonCrewCannotAccessPhasersWhenYellowAlert() {
         testee.setAlertStatus(Alert.YELLOW);
         assertFalse(testee.canAccessPhasers(lwaxana));
     }
 
     @Test
-    void userWithNullUserTypeCanNotAccessPhasersWhenYellowAlert() {
+    void userWithNullUserTypeCannotAccessPhasersWhenYellowAlert() {
         testee.setAlertStatus(Alert.YELLOW);
         assertFalse(testee.canAccessPhasers(q),
                 "User with null user type treated as non crew");
@@ -216,19 +216,19 @@ class AccessControlJUnit5Test {
     }
 
     @Test
-    void crewCanNotAccessPhasersWhenRedAlert() {
+    void crewCannotAccessPhasersWhenRedAlert() {
         testee.setAlertStatus(Alert.RED);
         assertFalse(testee.canAccessPhasers(barclay));
     }
 
     @Test
-    void nonCrewCanNotAccessPhasersWhenRedAlert() {
+    void nonCrewCannotAccessPhasersWhenRedAlert() {
         testee.setAlertStatus(Alert.RED);
         assertFalse(testee.canAccessPhasers(lwaxana));
     }
 
     @Test
-    void userWithNullUserTypeCanNotAccessPhasersWhenRedAlert() {
+    void userWithNullUserTypeCannotAccessPhasersWhenRedAlert() {
         testee.setAlertStatus(Alert.RED);
         assertFalse(testee.canAccessPhasers(q),
                 "User with null user type treated as non crew");
