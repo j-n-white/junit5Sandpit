@@ -5,3 +5,6 @@
 /junit5only/target/
 /junit5only/junit5-sandpit-junit5-only.iml
 /junit5-sandpit.iml
+/.gradle/
+/junit4and5/build/
+/junit5only/build/
