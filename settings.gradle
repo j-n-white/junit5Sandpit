@@ -1,0 +1,6 @@
+rootProject.name = 'junit5-sandpit'
+include ':junit5-sandpit-junit4-and-5'
+include ':junit5-sandpit-junit5-only'
+
+project(':junit5-sandpit-junit4-and-5').projectDir = "$rootDir/junit4and5" as File
+project(':junit5-sandpit-junit5-only').projectDir = "$rootDir/junit5only" as File
