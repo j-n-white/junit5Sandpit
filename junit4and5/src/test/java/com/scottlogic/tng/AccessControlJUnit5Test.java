@@ -8,6 +8,9 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+/**
+ * A JUnit 5 test created by converting the following JUnit 4 test {@link AccessControlJUnit4Test}
+ */
 class AccessControlJUnit5Test {
 
     private AccessControl testee;

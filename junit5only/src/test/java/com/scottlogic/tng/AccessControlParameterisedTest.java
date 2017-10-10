@@ -12,6 +12,9 @@ import java.util.stream.Stream;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+/**
+ * Refactored version of {@link AccessControlJUnit5Test} to show the assertions can be made using paramererised tests.
+ */
 @DisplayName("The USS Enterprise access control")
 class AccessControlParameterisedTest {
 

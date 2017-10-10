@@ -3,15 +3,17 @@ package com.scottlogic.tng;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.provider.Arguments;
 
 import java.util.function.Supplier;
-import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+/**
+ * A refactored version of {@link AccessControlGroupedAssertionTest} to show an alternate way the assertions could be
+ * grouped.
+ */
 @DisplayName("The USS Enterprise access control")
 class AccessControlAlternateGroupedAssertionTest {
 

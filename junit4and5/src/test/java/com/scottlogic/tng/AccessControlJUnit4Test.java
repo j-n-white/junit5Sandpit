@@ -8,6 +8,9 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+/**
+ * A JUnit 4 test for {@link AccessControl}
+ */
 public class AccessControlJUnit4Test {
 
     private AccessControl testee;

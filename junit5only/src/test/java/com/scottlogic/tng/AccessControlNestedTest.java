@@ -5,10 +5,14 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
- * Example class to show how nesting and display names can be used to logically group and label tests
+ * Refactored version of {@link AccessControlJUnit5Test} to show how nesting and display names can be used to logically
+ * group and label tests
  */
 @DisplayName("The USS Enterprise access control")
 class AccessControlNestedTest {

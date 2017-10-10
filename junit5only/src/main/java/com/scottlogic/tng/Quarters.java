@@ -1,5 +1,8 @@
 package com.scottlogic.tng;
 
+/**
+ * Represents a living quarters onboard the ship.
+ */
 class Quarters {
     private final int deck;
     private final int roomNumber;

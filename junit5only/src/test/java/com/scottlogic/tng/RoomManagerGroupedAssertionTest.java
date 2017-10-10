@@ -2,17 +2,19 @@ package com.scottlogic.tng;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
- * Test class to show how assertions can be grouped together so they are all run and then any failures are reported
- * together.
+ * Test class to show how assertions can be grouped together and nested so they are all run and then any failures are
+ * reported together.
  */
 @DisplayName("The USS Enterprise room management system")
 class RoomManagerGroupedAssertionTest {

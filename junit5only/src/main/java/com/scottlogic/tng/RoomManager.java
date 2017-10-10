@@ -3,6 +3,9 @@ package com.scottlogic.tng;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Mirrors the functionality of a system to allocate rooms on board the ship.
+ */
 class RoomManager implements DiagnosticInfo{
 
     private final List<Quarters> unallocatedQuarters = new ArrayList<>();

@@ -9,13 +9,15 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 
 /**
  * a refactored version of {@link RoomManagerGroupedAssertionTest} to show that just because you can use a new feature
  * it doesn't mean you always should. This test is significantly easier to follow when it does not use as many grouped
- * assertions but instread splits up the assertions into different tests and nested classes.
+ * assertions but instead splits up the assertions into different tests and nested classes.
  */
 @DisplayName("The USS Enterprise room management system")
 class RoomManagerRefactoredTest {

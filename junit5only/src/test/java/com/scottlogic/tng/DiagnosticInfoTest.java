@@ -5,7 +5,10 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-
+/**
+ * Example of how default methods can be used on interfaces to write tests that can be included in multiple other tests.
+ * see {@link AccessControlInterfaceTest} and {@link RoomManagerInterfaceTest}
+ */
 public interface DiagnosticInfoTest<T extends DiagnosticInfo> {
 
     T getInstance();

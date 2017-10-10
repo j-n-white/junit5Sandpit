@@ -1,5 +1,9 @@
 package com.scottlogic.tng;
 
+/**
+ * A simple class that mirrors the functionality of a ship's system that might be used to check if a given user can
+ * access a specific system.
+ */
 class AccessControl implements DiagnosticInfo {
 
     private Alert alertStatus = Alert.NONE;

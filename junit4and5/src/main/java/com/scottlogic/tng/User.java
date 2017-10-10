@@ -1,5 +1,8 @@
 package com.scottlogic.tng;
 
+/**
+ * Represents a user of the ship's computer.
+ */
 class User {
     private final String name;
     private final UserType userType;
